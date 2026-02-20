@@ -1,0 +1,53 @@
+### GET todos los cursos
+GET http://localhost:3000/api/courses
+
+### GET cursos que estan online=1
+GET http://localhost:3000/api/courses?online=1
+
+###GET de cursos a partir de una fecha:
+GET http://localhost:3000/api/courses?start_date=2026-02-01
+
+###GET de cursos a partir de un rango (inicio -fin)
+GET http://localhost:3000/api/courses?start_date_from=2026-02-01&start_date_to=2027-02-01
+
+###GET de cursos a partir de una fecha qcon error tiene que escoger inicio y final
+GET http://localhost:3000/api/courses?start_date_from=2027-02-01
+
+### GET curso por id
+GET http://localhost:3000/api/courses/1
+
+### GET curso por id que no existe
+GET http://localhost:3000/api/courses/99
+
+### POST nuevo curso
+POST http://localhost:3000/api/courses
+Content-Type: application/json
+
+{
+  "name": "Curso Fontanería Básica",
+  "description": "Introducción a fontanería",
+  "online": 0,
+  "start_date": "2026-03-01",
+  "duration": 30,
+  "price": "150.00",
+  "image_url": "null"
+}
+
+### PUT curso 8 cambio de horas
+PUT http://localhost:3000/api/courses/8
+Content-Type: application/json
+
+{
+  "duration": 150
+}
+
+### PUT curso 8 cambio de horas
+PUT http://localhost:3000/api/courses/6
+Content-Type: application/json
+
+{
+  "description": "Bricolaje para mayores, principantes."
+}
+
+### DELETE curso
+DELETE http://localhost:3000/api/courses/10

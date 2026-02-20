@@ -1,0 +1,42 @@
+### GET todos los profesores
+GET http://localhost:3000/api/teachers
+
+### GET profesor por id (usa uno que ya exista)
+GET http://localhost:3000/api/teachers/1
+
+### GET profesor por id (usa uno que no existe)
+GET http://localhost:3000/api/teachers/50
+
+### GET profesor por active o inactive
+GET http://localhost:3000/api/teachers?active=0
+
+### GET profesor por STATUS(BAJA/ALTA/PERMISO)
+GET http://localhost:3000/api/teachers?status=BAJA
+
+
+### POST nuevo profesor
+POST http://localhost:3000/api/teachers
+Content-Type: application/json
+
+{
+  "dni": "99999999Z",
+  "fullname": "Profesor Prueba2",
+  "email": "prueba@correo.com",
+  "active": 1,
+  "status": "ALTA",
+  "teaching_hours": 10,
+  "hourly_rate": "25.00",
+  "hire_date": "2026-02-01",
+  "image_url": "null"
+}
+
+### PUT profesor (id existente)
+PUT http://localhost:3000/api/teachers/4
+Content-Type: application/json
+
+{
+  "fullname": "Profesor Actualizado"
+}
+
+### DELETE profesor
+DELETE http://localhost:3000/api/teachers/4
